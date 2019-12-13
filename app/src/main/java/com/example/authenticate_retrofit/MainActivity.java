@@ -11,10 +11,15 @@ import android.widget.Toast;
 import com.example.authenticate_retrofit.api.ServiceAPI;
 import com.example.authenticate_retrofit.api.ServiceGenerator;
 import com.example.authenticate_retrofit.model.Login;
+import com.example.authenticate_retrofit.model.Profile;
 import com.example.authenticate_retrofit.model.User;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
 
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -46,7 +51,13 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                new Gson().fromjson
+                try {
+                    Type profileListType = new TypeToken<ArrayList<Profile>>(){}.getType();
+                    List<Profile> profiles= new Gson().fromJson(response.body().string(), profileListType);
+                    Toast.makeText(MainActivity.this, "list:"+profiles.size(), Toast.LENGTH_SHORT).show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
 
             @Override

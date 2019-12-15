@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Authenticate_Retrofit</string>
+    <string name="Open">Open</string>
+    <string name="Close">Close</string>
+
+
+    <string name="user_name">admin</string>
+    <string name="user_password">admin</string>
+    <string name="login_preference">com.example.authenticate_retrofit_login_preference</string>
+    <string name="login_status_preference">com.example.authenticate_retrofit_login_status_preference</string>
+
 </resources>

@@ -5,7 +5,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.example.authenticate_retrofit"
-        minSdkVersion 22
+        minSdkVersion 26
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -31,10 +31,21 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 
+    /*material*/
+    implementation 'com.google.android.material:material:1.0.0'
+    /*retrofit*/
     implementation 'com.squareup.retrofit2:retrofit:2.7.0'
-    implementation "androidx.recyclerview:recyclerview:1.1.0"
     implementation 'com.squareup.retrofit2:converter-gson:2.7.0'
     implementation("com.squareup.okhttp3:logging-interceptor:4.2.1")
+    /*recyclerview*/
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+    /*cardview*/
+    implementation 'androidx.cardview:cardview:1.0.0'
+    /*circle image*/
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
+
+    /*easy permission*/
+    implementation 'pub.devrel:easypermissions:3.0.0'
 
 
 }

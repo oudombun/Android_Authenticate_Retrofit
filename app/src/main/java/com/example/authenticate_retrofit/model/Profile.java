@@ -1,6 +1,8 @@
 package com.example.authenticate_retrofit.model;
 
-public class Profile {
+import java.io.Serializable;
+
+public class Profile implements Serializable {
     String name;
     String photo;
 
